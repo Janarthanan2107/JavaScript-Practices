@@ -143,7 +143,7 @@ if (num1 >= num2 && num1 >= num3) {
     }
 }
 
-// alert("Sorted numbers: " + sortedNumbers);
+ alert("Sorted numbers: " + sortedNumbers);
 
 // 9. Write a JavaScript function that returns a string that has letters in alphabetical
 // order.
