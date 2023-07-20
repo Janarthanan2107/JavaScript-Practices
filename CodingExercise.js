@@ -1360,56 +1360,290 @@
 
 // console.log(extractSKUQuantity(`CHN1000000-CBE---12.5"-1-13-22C`))
 
-const person = {
-    name: "jana",
-    age: 24,
-    city: "palladam",
-}
+// const person = {
+//     name: "jana",
+//     age: 24,
+//     city: "palladam",
+// }
 
-for (let key in person) {
-    console.log(key + ":" + person[key])
-}
+// for (let key in person) {
+//     console.log(key + ":" + person[key])
+// }
 
-const colors = ["red", "green", "yellow"]
+// const colors = ["red", "green", "yellow"]
 
-for (let color of colors) {
-    console.log(color)
-}
+// for (let color of colors) {
+//     console.log(color)
+// }
 
-const message = 'Jana';
+// const message = 'Jana';
 
-for (let char of message) {
-    console.log(char);
-}
+// for (let char of message) {
+//     console.log(char);
+// }
 
-const student = {
-    name: "jana",
-    age: 24,
-    city: "palladam",
-    marks: [20, 30, 40, 50, 60],
-}
+// const student = {
+//     name: "jana",
+//     age: 24,
+//     city: "palladam",
+//     marks: [20, 30, 40, 50, 60],
+// }
 
-function average(arr) {
-    let totalMark = 0
+// function average(arr) {
+//     let totalMark = 0
 
-    for (let mark in arr.marks) {
-        totalMark += arr.marks[mark] / arr.marks.length
+//     for (let mark in arr.marks) {
+//         totalMark += arr.marks[mark] / arr.marks.length
+//     }
+
+//     return totalMark;
+// }
+
+// console.log(average(student))
+
+// function sumNum(arr) {
+//     let sum = 0
+
+//     for (let add of arr) {
+//         sum += add
+//     }
+
+//     return sum;
+// }
+
+// let array = [1, 2, 3, 4, 5]
+// console.log(sumNum(array))
+
+// higher order function
+
+// function message(name, type) {
+//     return type(name)
+//     // return name
+// }
+
+// function upperCase(name) {
+//     return name.toUpperCase()
+// }
+
+// function firstIsUpperCase(name) {
+//     return name.charAt(0).toUpperCase() + name.slice(1)
+// }
+
+// console.log(message("Jana", upperCase))
+// console.log(message("Jana", firstIsUpperCase))
+
+// input: we are boys
+
+// output : ew are syob
+
+// function reverseCharactersOfWord(str) {
+//     // const strArr = str.split(" ")
+//     // const resultArr = strArr.map((ele) =>
+//     //     ele.split("").reverse().join("")
+//     // )
+
+//     // for (const char of strArr) {
+//     //     // console.log(char)
+//     //     resultArr.push(char.split("").reverse().join(""))
+//     // }
+
+//     // return resultArr.join(" ")
+
+//     return str.split(" ").map((ele) =>
+//         ele.split("").reverse().join("")
+//     ).join(" ")
+// }
+
+// console.log(reverseCharactersOfWord("we are boys"))
+
+// -------------------------Functional programming------------------------------------
+// -------------------------Functional programming------------------------------------
+// -------------------------Functional programming------------------------------------
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const string = ["jana", "satz", "ash"]
+// forEach
+// let average = 0
+// numbers.forEach((ele, index, arr) => {
+//     average = average + ele / arr.length
+// })
+
+// let result = []
+// string.forEach((ele, index, arr) => {
+//     result.push(ele.split("").reverse().join(""))
+// })
+
+// let filter = []
+// result.forEach((ele, index, arr) => {
+//     if (ele.length == 3) {
+//         filter.push(ele)
+//     }
+// })
+
+// console.log(average)
+// console.log(result)
+// console.log(filter)
+
+// Map
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const string = ["jana", "satz", "ash"]
+
+// const someCalc = numbers.map((ele, index, arr) => {
+//     return ele * 2 / arr.length
+// })
+
+// const someStrMethod = string.map((ele, index, arr) => {
+//     return ele.split("").reverse().join("")
+// })
+
+// const someCondition = string.map((ele, index, arr) => {
+//     let filter = []
+//     if (ele.length !== 3) {
+//         filter.push(ele)
+//     }
+
+//     //even if a condition fails on that case also map works on it and pushes the empty
+//     return filter
+// })
+
+// why? answer is not what im expecting
+// let filter = []
+// const someCondition = string.map((ele, index, arr) => ele.length !== 3 ? filter.push(ele) : "")
+
+// console.log(someCalc)
+// console.log(someStrMethod)
+// console.log(someCondition)
+
+// filter
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const string = ["jana", "satz", "ash"]
+
+// const evenNumbers = numbers.filter((ele, index, arr) => {
+//     return ele % 2 == 0
+// })
+
+// const oddNumbers = numbers.filter((ele, index, arr) => {
+//     return ele % 2 !== 0
+// })
+
+// const pickString = string.filter((ele, index, arr) => {
+//    if( ele.charAt(0) == "s"){
+//     return ele
+//    }
+// })
+
+// console.log(evenNumbers)
+// console.log(oddNumbers)
+// console.log(pickString)
+
+// find
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const string = ["jana", "satz", "ash"]
+
+// const resultNum = numbers.find((ele, index, obj) => {
+//     return ele > 4
+// })
+
+// const resultStr = string.find((ele, index, obj) => {
+//     return ele.charAt(0) == "s"
+// })
+
+// console.log(resultNum)
+// console.log(resultStr)
+
+// every thing is similar to one another even its name it self says what was there work
+// find
+// findIndex
+// findLast
+// findLastIndex
+
+// this two will return in boolean values
+// some
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const string = ["jana", "satz", "ash"]
+
+// const resultNum = numbers.some((ele, index, arr) => {
+//     return ele > 6
+// })
+
+// const resultStr = string.some((ele, index, arr) => {
+//     return ele === "jana"
+// })
+
+// console.log(resultNum)
+// console.log(resultStr)
+// every
+// const resultNum = numbers.every((ele, index, arr) => {
+//     return ele > 6
+// })
+
+// const resultStr = string.every((ele, index, arr) => {
+//     return ele === "jana"
+// })
+
+// console.log(resultNum)
+// console.log(resultStr)
+
+// reduce
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const string = ["jana", "satz", "ash", "hari", "dharneesh"]
+
+// const reduceNum = numbers.reduce((acc, curr, index, arr) => {
+//     return acc + curr
+// }, 0)
+
+// let filterThree = []
+// let filterRest = []
+// const reduceStr = string.reduce((acc, curr, index, arr) => {
+//     console.log(acc)
+//     // console.log(curr)
+//     if (curr.length === 3) {
+//         filterThree.push(curr.split(" "))
+//     } else {
+//         filterRest.push(curr.split(" "))
+//     }
+// })
+
+// console.log(reduceNum)
+// console.log(filterThree)
+// console.log(filterRest)
+
+// sort
+// toSorted
+
+let integer = 5
+let number = ""
+
+for (let i = 1; i <= integer; i++) {
+    for (let j = 1; j <= i; j++) {
+        number += i
     }
-
-    return totalMark;
+    number += "\n"
 }
 
-console.log(average(student))
+console.log(number)
 
-function sumNum(arr) {
-    let sum = 0
+const arr = [5, 5, 5, 6, 5, 2, 1]
+const count = {}
 
-    for (let add of arr) {
-        sum += add
+for (const num of arr) {
+    // console.log(num)
+    count[num] = count[num] ? count[num] + 1 : 1
+}
+
+console.log(count)
+
+function removeDuplicates(elements) {
+    let unique = []
+    for (let i = 0; i < elements.length; i++) {
+        console.log(!unique.includes(elements[i]))
+        if (!unique.includes(elements[i])) {
+            unique.push(elements[i]);
+        }
     }
-
-    return sum;
+    return unique;
 }
 
-let array = [1, 2, 3, 4, 5]
-console.log(sumNum(array))
+let arrDup = ['jana', 'jana', 'sats', 'aswath']
+let remove = removeDuplicates(arrDup)
+console.log(remove)

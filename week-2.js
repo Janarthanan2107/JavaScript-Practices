@@ -92,11 +92,11 @@ const product3 = 2;
 const product = product1 * product2 * product3;
 
 if (product > 0) {
-    alert("The sign is +");
+    console.log("The sign is +");
 } else if (product < 0) {
-    alert("The sign is -");
+    console.log("The sign is -");
 } else {
-    alert("The product is zero");
+    console.log("The product is zero");
 }
 
 // 7 .remove the items in dropdown using js
@@ -143,7 +143,7 @@ if (num1 >= num2 && num1 >= num3) {
     }
 }
 
- alert("Sorted numbers: " + sortedNumbers);
+console.log("Sorted numbers: " + sortedNumbers);
 
 // 9. Write a JavaScript function that returns a string that has letters in alphabetical
 // order.
@@ -153,6 +153,7 @@ if (num1 >= num2 && num1 >= num3) {
 function sortString(str) {
     const sortedArray = str.split('').sort();
     const sortedString = sortedArray.join('');
+    console.log(sortedArray)
     return sortedString;
 }
 
