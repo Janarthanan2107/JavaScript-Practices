@@ -1,7 +1,7 @@
-// // sync , async ,fetch
+// sync , async ,fetch
 
-// // error handling , await
-// // try,catch,finally
+// error handling , await
+// try,catch,finally
 
 // const url = `https://fakestoreapi.com/products`;
 // // const url = `https://randomuser.me/api/`;
@@ -52,19 +52,23 @@
 
 // async awaits
 
-const url = `https://fakestoreapi.com/products`;
+const url = `https://fakestoreapi.com/producs`;
 
-// try {
-//     fetch(url)
-//         .then((res) => res.json())
-//         .then((data) => { console.log(data) })
-// } catch (err) {
-//     console.log(err)
-// }
+try {
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => { console.log(data) })
+} catch (err) {
+    console.log(err)
+} finally {
+    // finally, if error comes or not whatever happens will execute the action wrote inside the block
+    console.log("hello")
+}
 
 try {
     const fetchData = async (url) => {
         const response = await fetch(url);
+        console.log(response)
         if (response.status !== 200) {
             console.log("I'm not here")
         } else {
@@ -76,6 +80,9 @@ try {
     fetchData(url)
 } catch (err) {
     console.log(err)
-}
+}  finally {
+        // finally, if error comes or not whatever happens will execute the action wrote inside the block
+        console.log("hello")
+    }
 
 // await works like

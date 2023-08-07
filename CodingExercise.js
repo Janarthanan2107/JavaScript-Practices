@@ -1595,8 +1595,6 @@
 // let filterThree = []
 // let filterRest = []
 // const reduceStr = string.reduce((acc, curr, index, arr) => {
-//     console.log(acc)
-//     // console.log(curr)
 //     if (curr.length === 3) {
 //         filterThree.push(curr.split(" "))
 //     } else {
@@ -1608,42 +1606,100 @@
 // console.log(filterThree)
 // console.log(filterRest)
 
+// let result = { "a": 1, "b": 1, "c": 1 }
+// result["d"] = 1
+// console.log(result)
+
+// // finding 2d array occurrence
+// let array = [
+//     ["a", "b", "c"],
+//     ["c", "d", "e"],
+//     ["d", "e", "f"]
+// ]
+// console.log(array.flat())
+
+// let count = array.flat().reduce(
+//     (acc, curr) => {
+//         if (acc[curr]) {
+//             acc[curr]++
+//         } else {
+//             acc[curr] = 1
+//         }
+//         return acc
+//     }
+//     , {})
+
+// console.log(count)
+
+// let arr = [4, 6, 2, 3, 1, 1, 3, 5, 7, 8, 4, 3]
+
+
+// let unique = arr.reduce((acc, curr, index, arr) => {
+//     if (!acc.includes(curr)) {
+//         acc.push(curr)
+//     }
+//     return acc
+// }, [])
+
+// const removeDuplicates = (str) => {
+//     let unique = str.reduce((acc, curr) => {
+//         if (!acc.includes(curr)) {
+//             acc.push(curr)
+//         }
+//         return acc
+//     }, [])
+
+//     return unique
+// }
+
+// console.log(removeDuplicates(["jana", "jana", "jana", "satz", "ash"]))
+
+// closures gives you access to the outer functions scope from an inner function
+// function makeAdd(x) {
+//     return function (y) {
+//         return x + y
+//     }
+// }
+
+// let Add = makeAdd(10)
+// console.log(Add(5))
+// console.log(Add(10))
 // sort
 // toSorted
 
-let integer = 5
-let number = ""
+// let integer = 5
+// let number = ""
 
-for (let i = 1; i <= integer; i++) {
-    for (let j = 1; j <= i; j++) {
-        number += i
-    }
-    number += "\n"
-}
+// for (let i = 1; i <= integer; i++) {
+//     for (let j = 1; j <= i; j++) {
+//         number += i
+//     }
+//     number += "\n"
+// }
 
-console.log(number)
+// console.log(number)
 
-const arr = [5, 5, 5, 6, 5, 2, 1]
-const count = {}
+// const arr = [5, 5, 5, 6, 5, 2, 1]
+// const count = {}
 
-for (const num of arr) {
-    // console.log(num)
-    count[num] = count[num] ? count[num] + 1 : 1
-}
+// for (const num of arr) {
+//     // console.log(num)
+//     count[num] = count[num] ? count[num] + 1 : 1
+// }
 
-console.log(count)
+// console.log(count)
 
-function removeDuplicates(elements) {
-    let unique = []
-    for (let i = 0; i < elements.length; i++) {
-        console.log(!unique.includes(elements[i]))
-        if (!unique.includes(elements[i])) {
-            unique.push(elements[i]);
-        }
-    }
-    return unique;
-}
+// function removeDuplicates(elements) {
+//     let unique = []
+//     for (let i = 0; i < elements.length; i++) {
+//         console.log(!unique.includes(elements[i]))
+//         if (!unique.includes(elements[i])) {
+//             unique.push(elements[i]);
+//         }
+//     }
+//     return unique;
+// }
 
-let arrDup = ['jana', 'jana', 'sats', 'aswath']
-let remove = removeDuplicates(arrDup)
-console.log(remove)
+// let arrDup = ['jana', 'jana', 'sats', 'aswath']
+// let remove = removeDuplicates(arrDup)
+// console.log(remove)
