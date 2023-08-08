@@ -1514,6 +1514,17 @@
 // console.log(someStrMethod)
 // console.log(someCondition)
 
+// let str = "Robert Andrew Geotge"
+
+// let splited = str.split(" ")
+
+// let result = splited.map((ele) => {
+//     let firstChar = ele.charAt(0)
+//     return firstChar
+// })
+
+// console.log(result.join(""))
+
 // filter
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 // const string = ["jana", "satz", "ash"]
@@ -1535,6 +1546,13 @@
 // console.log(evenNumbers)
 // console.log(oddNumbers)
 // console.log(pickString)
+
+// add all the positive integers
+// let input = [6, -5, 7, -2, 4, 6, -1]
+
+// let positiveValue = input.filter(positive => positive > 0).reduce((acc, curr) => acc + curr)
+
+// console.log(positiveValue)
 
 // find
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -1689,17 +1707,40 @@
 
 // console.log(count)
 
-// function removeDuplicates(elements) {
-//     let unique = []
-//     for (let i = 0; i < elements.length; i++) {
-//         console.log(!unique.includes(elements[i]))
-//         if (!unique.includes(elements[i])) {
-//             unique.push(elements[i]);
-//         }
-//     }
-//     return unique;
+// let i = 10
+
+// for (i = 1; i <= 10; i++) {
+//     console.log(i)
 // }
 
-// let arrDup = ['jana', 'jana', 'sats', 'aswath']
-// let remove = removeDuplicates(arrDup)
-// console.log(remove)
+// for (i = 10; i >= 1; i--) {
+//     console.log(i)
+// }
+
+// i = 1
+// while (i <= 10) {
+//     console.log(i)
+//     i++
+// }
+
+// i = 10
+// while (i >= 1) {
+//     console.log(i)
+//     i--
+// }
+
+// i = 10
+// do {
+//     console.log(i)
+//     i--;
+// } while (i >=1)
+
+
+// let i = 10
+
+// for (i = 1; i <= 10; i++) {
+//     if (i % 3 == 0) {
+//         continue
+//     }
+//     console.log(i)
+// }
