@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <p>Week-one Tasks(September)</p>
+    <h1>Tasks Results:</h1>
+    <div id="output"></div>
+
+    <h2>Task 1: Find Largest Even Number</h2>
+    <button onclick="findLargestEvenNumber([2, 4, 6, 1, 8, 3, 7])">
+      Find Largest Even Number
+    </button>
+
+    <h2>Task 2: Calculate Operations</h2>
+    <button onclick="calculateOperations(2, 4)">Calculate Operations</button>
+
+    <h2>Task 3: Check Palindrome</h2>
+    <button onclick="checkPalindrome('ABCDCBA')">Check Palindrome</button>
+
+    <h2>Task 4: Find Average</h2>
+    <button onclick="findAverage([2, 3, 4, 5])">Find Average</button>
+
+    <h2>Task 5: Select Random Item</h2>
+    <button
+      onclick="selectRandomItem(['Apple', 'Banana', 'Orange', 'Grape', 'Mango'])"
+    >
+      Select Random Item
+    </button>
+
+    <h2>Task 6: Count Vowels</h2>
+    <button onclick="countVowels('Skill safari')">Count Vowels</button>
+
+    <h2>Task 7: Find Median</h2>
+    <button onclick="findMedian([2, 5, 7, 1, 45, 8, 7])">Find Median</button>
+
+    <h2>Task 8: Check Anagrams</h2>
+    <button onclick="areAnagrams('Skill', 'safari')">Check Anagrams</button>
+
+    <h2>Task 9: Find Largest and Smallest Odd Numbers</h2>
+    <button onclick="findLargestAndSmallestOdd([2, 4, 5, 7, 2, 3])">
+      Find Largest and Smallest Odd Numbers
+    </button>
+
+    <h2>Task 10: Remove Duplicates</h2>
+    <button
+      onclick="removeDuplicates(['apple', 'banana', 'cherry', 'apple', 'date', 'banana', 'elderberry'])"
+    >
+      Remove Duplicates
+    </button>
+
+    <!-- js file -->
+    <script type="text/javascript">
+      function findLargestEvenNumber(numbers) {
+        let largestEven = -Infinity;
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] % 2 === 0 && numbers[i] > largestEven) {
+            largestEven = numbers[i];
+          }
+        }
+        document.getElementById("output").innerHTML =
+          "Largest even number: " + largestEven;
+      }
+
+      function calculateOperations(num1, num2) {
+        const sum = num1 + num2;
+        const difference = num1 - num2;
+        const product = num1 * num2;
+        const quotient = num1 / num2;
+        document.getElementById("output").innerHTML =
+          "Sum: " +
+          sum +
+          ", Difference: " +
+          difference +
+          ", Product: " +
+          product +
+          ", Quotient: " +
+          quotient;
+      }
+
+      function checkPalindrome(inputString) {
+        const reversedString = inputString.split("").reverse().join("");
+        if (inputString === reversedString) {
+          document.getElementById("output").innerHTML =
+            "The string is a palindrome.";
+        } else {
+          document.getElementById("output").innerHTML =
+            "The string is not a palindrome.";
+        }
+      }
+
+      function findAverage(numbers) {
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        const average = sum / numbers.length;
+        document.getElementById("output").innerHTML =
+          "The average is " + average.toFixed(2);
+      }
+
+      function selectRandomItem(items) {
+        const randomIndex = Math.floor(Math.random() * items.length);
+        document.getElementById("output").innerHTML =
+          "Randomly selected item: " + items[randomIndex];
+      }
+
+      function countVowels(inputString) {
+        const vowelCount = inputString.match(/[aeiouAEIOU]/g).length;
+        document.getElementById("output").innerHTML =
+          "Number of vowels: " + vowelCount;
+      }
+
+      function findMedian(numbers) {
+        const sortedNumbers = numbers.sort((a, b) => a - b);
+        const middleIndex = Math.floor(numbers.length / 2);
+        const median =
+          numbers.length % 2 === 0
+            ? (sortedNumbers[middleIndex - 1] + sortedNumbers[middleIndex]) / 2
+            : sortedNumbers[middleIndex];
+        document.getElementById("output").innerHTML = "Median: " + median;
+      }
+
+      function areAnagrams(str1, str2) {
+        const sortedStr1 = str1.split("").sort().join("");
+        const sortedStr2 = str2.split("").sort().join("");
+        if (sortedStr1 === sortedStr2) {
+          document.getElementById("output").innerHTML =
+            "The strings are anagrams.";
+        } else {
+          document.getElementById("output").innerHTML =
+            "The strings are not anagrams.";
+        }
+      }
+
+      function findLargestAndSmallestOdd(numbers) {
+        let largestOdd = -Infinity;
+        let smallestOdd = Infinity;
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] % 2 !== 0) {
+            if (numbers[i] > largestOdd) {
+              largestOdd = numbers[i];
+            }
+            if (numbers[i] < smallestOdd) {
+              smallestOdd = numbers[i];
+            }
+          }
+        }
+        document.getElementById("output").innerHTML =
+          "Largest odd number: " +
+          largestOdd +
+          ", Smallest odd number: " +
+          smallestOdd;
+      }
+
+      function removeDuplicates(items) {
+        const uniqueItems = [...new Set(items)];
+        document.getElementById("output").innerHTML = uniqueItems.join(", ");
+      }
+    </script>
+  </body>
+</html>
