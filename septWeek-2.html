@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>Logical Questions Week-2 (Step)</h1>
+    <div>
+      <h3>1.Given string is valid JSON results displayed in console</h3>
+      <h3>
+        2.Finds the longest increasing subarray within an array of numbers.
+        results displayed in console
+      </h3>
+      <h3>3.Deep comparison between two objects to check if they are equal.</h3>
+      <h3>
+        4.calculate the factorial of a given non-negative results displayed in
+        console.
+      </h3>
+      <h3>
+        5.pairs of elements in an array that add up to a specific target sum
+        results displayed in console.
+      </h3>
+      <h3>
+        6. Create a function that finds the largest common prefix among an array
+        of strings.
+      </h3>
+      <h3>7.Create a function to find the nth prime number.</h3>
+      <h3>
+        8. Implement a function that sorts an array of objects by a specific
+        property in ASO
+      </h3>
+      <h3>
+        9. Write a function that performs a deep merge of two objects, combining
+        their properties.
+      </h3>
+    </div>
+
+    <script type="text/javascript">
+      // 1. Given string is valid JSON
+      function isValidJSON(str) {
+        try {
+          JSON.parse(str);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      // Test cases
+      console.log(isValidJSON('{"name": "John", "age": 30}')); // true
+      console.log(isValidJSON('{"name": "John", "age": 30,}')); // false (comma at the end)
+      console.log(isValidJSON('{"name": "John", "age": "30"}')); // true
+      console.log(
+        isValidJSON('{"name": "John", "age": 30, "city": "New York",}')
+      ); // true
+
+      // 2. finds the longest increasing subarray
+      function longestIncreasingSubarray(arr) {
+        let longestSubarray = [];
+        let currentSubarray = [arr[0]];
+
+        for (let i = 1; i < arr.length; i++) {
+          // console.log(arr[i]);
+          // console.log(arr[i - 1]);
+          if (arr[i] > arr[i - 1]) {
+            currentSubarray.push(arr[i]);
+          }
+        }
+        // console.log("current subarray", currentSubarray);
+
+        return currentSubarray;
+      }
+      // Test cases
+      console.log(longestIncreasingSubarray([1, 2, 3, 1, 2, 3, 4, 5])); // [1, 2, 3, 4, 5]
+      console.log(longestIncreasingSubarray([5, 4, 3, 2, 1])); // [5]
+      console.log(longestIncreasingSubarray([1, 2, 3, 4, 3, 2, 1])); // [1, 2, 3, 4]
+
+      // 3. deep comparison between two objects
+      function deepEqual(obj1, obj2) {
+        const keys1 = Object.keys(obj1);
+        const keys2 = Object.keys(obj2);
+
+        console.log(keys1);
+        console.log(keys2);
+
+        // converting them to strings and comparing
+        return JSON.stringify(keys1) === JSON.stringify(keys2);
+      }
+
+      // Test cases
+      const objA = { a: 1, b: { c: 2 } };
+      const objB = { a: 1, b: { c: 2 } };
+      const objC = { a: 1, b: { c: 3 } };
+
+      console.log(deepEqual(objA, objB)); // true
+      console.log(deepEqual(objA, objC)); // false
+
+      // 4. calculate the factorial of a given non-negative
+      function factorial(n) {
+        // Base case: factorial of 0 is 1
+        if (n === 0) {
+          return 1;
+        }
+
+        // Recursive case: n! = n * (n-1)!
+        return n * factorial(n - 1);
+      }
+
+      // Test cases
+      console.log(factorial(0)); // 1
+      console.log(factorial(5)); // 120
+      console.log(factorial(10)); // 3628800
+
+      // 5. finds all pairs of elements
+      function findPairsWithSum(arr, targetSum) {
+        const pairs = [];
+
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === targetSum) {
+              pairs.push([arr[i], arr[j]]);
+            }
+          }
+        }
+
+        return pairs;
+      }
+
+      // Test cases
+      console.log(findPairsWithSum([1, 2, 3, 4, 5], 7)); // [[2, 5], [3, 4]]
+      console.log(findPairsWithSum([1, 2, 3, 4, 5], 10)); // [[5, 5]]
+      console.log(findPairsWithSum([3, 4, 2, 1, 5], 8)); // [[3, 5], [4, 4], [2, 5], [1, 5]]
+
+      //   6.
+      function commonPrefix(str) {
+        if (str.length === 0) {
+          return " ";
+        }
+
+        let prefix = "";
+
+        for (let i = 0; i < str[0].length; i++) {
+          const char = str[0][i];
+          console.log(char);
+          for (const string of str) {
+            if (string[i] !== char) {
+              return prefix;
+            }
+          }
+          prefix += char;
+        }
+        return prefix;
+      }
+
+      const content1 = [`flower`, `flow`, `flight`];
+      const content2 = ["dog", "car", "race"];
+      const content3 = ["apple", "app", "apricot"];
+      commonPrefix(content1);
+      commonPrefix(content2);
+      commonPrefix(content3);
+
+      //7.
+      function nthPrime(n) {
+        console.log(n);
+      }
+      // Test cases
+      console.log(nthPrime(1)); // 2
+      console.log(nthPrime(5)); // 11
+      console.log(nthPrime(10)); // 29
+
+      //8.
+      function sortByProperty(arr, prop) {
+        return arr.slice().sort((a, b) => a[prop] - b[prop]);
+      }
+
+      // Test case
+      const people = [
+        { name: "John", age: 30 },
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 35 },
+      ];
+
+      console.log(sortByProperty(people, "age"));
+      // Output: [{ name: "Alice", age: 25 }, { name: "John", age: 30 }, { name: "Bob", age: 35 }]
+
+      //9.
+      function deepMerge(obj1, obj2) {
+        console.log(obj1);
+        console.log(obj2);
+      }
+      // Test case
+      const obj1 = { a: { b: 2 }, c: 3 };
+      const obj2 = { a: { b: 4, d: 5 }, e: 6 };
+      console.log(deepMerge(obj1, obj2));
+      // Output: { a: { b: 4, d: 5 }, c: 3, e: 6 }
+
+      // 10.
+      function binarySearch(arr, target) {
+        console.log(arr)
+        console.log(target)
+      }
+      // Test cases
+      const sortedArray = [1, 3, 5, 7, 9, 11, 13];
+      console.log(binarySearch(sortedArray, 7)); // 3
+      console.log(binarySearch(sortedArray, 2)); // -1 (not found)
+    </script>
+  </body>
+</html>
