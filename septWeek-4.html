@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <h1>Week-4/Sept'23</h1>
+    <div>
+      <p>1.Swap two variables without using a temporary variable.</p>
+      <p>2. Check if a given number, is a prime number.</p>
+      <p>3. Check if a given string is a valid email address.</p>
+      <p>4. Calculate the factorial of a number using a recursive function.</p>
+      <p>
+        5. Reverse words in a sentence without reversing the individual words.
+      </p>
+      <p>
+        6. Write a sum method which will work properly when invoked using either
+        syntax below.
+      </p>
+      <p>7. What will be the output of the code below?</p>
+      <p>
+        8. Check if a given string is a valid palindrome, considering only
+        alphanumeric characters and ignoring case.
+      </p>
+      <p>
+        9. Write a function that counts how many times a specific element
+        appears in an array.
+      </p>
+      <p>
+        10. Write a function that detects if a given substring exists in a
+        larger string.
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      // 1.
+      const swapVariables = (a, b) => {
+        a = a + b;
+        // value of a = 15
+        b = a - b;
+        // value of b = 5
+        a = a - b;
+        // value 0f a = 10
+        return [a, b];
+      };
+
+      console.log(swapVariables(5, 10)); // Output: [10, 5]
+
+      // 2.
+      const isPrime = (number) => {
+        if (number <= 1) {
+          return false;
+        }
+        for (let i = 2; i < number; i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      };
+
+      console.log("Number is Prime :", isPrime(7)); // Output: true
+      console.log("Number is Prime :", isPrime(10)); // Output: false
+
+      // 3.
+      const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      };
+
+      console.log("Email isValid :", isValidEmail("example@email.com")); // Output: true
+      console.log("Email isValid :", isValidEmail("invalid-email")); // Output: false
+
+      // 4.
+      const calculateFactorial = (number) => {
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+          factorial *= i;
+        }
+        return factorial;
+      };
+
+      let factorial = calculateFactorial(5);
+      console.log("Factorial is :", factorial); //output : 120
+
+      // 5.
+      const reverseWordsInSentence = (sentence) => {
+        const words = sentence.split(" ");
+        console.log(words);
+
+        const reversedWords = words.map((word) => {
+          // console.log(word.split("").reverse().join(""));
+          return word.split("").reverse().join("");
+        });
+
+        console.log(reversedWords);
+
+        return reversedWords.join(" ");
+      };
+
+      console.log(reverseWordsInSentence("Hello world")); // Output: 'olleH dlrow'
+
+      // 6.
+      // function sum(a, b) {
+      //   return a + b;
+      // }
+
+      // function currying(fn) {
+      //   return function (a) {
+      //     return function (b) {
+      //       return fn(a, b);
+      //     };
+      //   };
+      // }
+
+      // let curriedAdd = currying(sum);
+
+      // console.log(sum(2)(3));
+      // console.log(curriedAdd(2)(3));
+
+      function sum(x, y) {
+        if (arguments.length === 2) {
+          return x + y;
+        } else if (arguments.length === 1) {
+          return function (y) {
+            return x + y;
+          };
+        }
+      }
+
+      console.log("Sum is :", sum(2, 3)); // Outputs 5
+      console.log("Sum is :", sum(2)(3)); // Outputs 5
+
+      // 7.
+      // var Foo = Function Bar(){
+      //   return 7;
+      // };
+
+      // console.log(Foo)
+
+      // 8.
+      const isPalindrome = (str) => {
+        // Remove non-alphanumeric characters and convert to lowercase
+        const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+        // console.log(cleanedStr.split("").reverse().join(""));
+        return cleanedStr === cleanedStr.split("").reverse().join("");
+      };
+
+      console.log(
+        "Valid palindrome :",
+        isPalindrome("A man, a plan, a canal, Panama")
+      ); // Output: true
+      console.log("Valid palindrome :", isPalindrome("race car")); // Output: true
+
+      // 9.
+      const countOccurrences = (arr, target) => {
+        // console.log(arr);
+        return arr.reduce((count, current) => {
+          // console.log("--------");
+          // console.log("target", target);
+          // console.log("count", count);
+          // console.log("current", current);
+          // console.log("--------");
+          if (current === target) {
+            return count + 1;
+          }
+          return count;
+        }, 0);
+      };
+
+      const arr = [1, 2, 2, 3, 4, 2, 5];
+      const count = countOccurrences(arr, 2);
+      console.log("Count:", count); // Expected Output: 3
+
+      // 10.
+      const doesSubstringExist = (largeString, substring) => {
+        return largeString.includes(substring);
+      };
+
+      const largeString = "This is a sample string for testing.";
+      const substring = "sample";
+      console.log(
+        "Substring Exist :",
+        doesSubstringExist(largeString, substring)
+      ); // Expected Output: true
+    </script>
+  </body>
+</html>
