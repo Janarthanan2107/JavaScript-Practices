@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <div>
+      <h1>Logical Question (Oct - week-1)</h1>
+      <p>1. Write a program that takes an array of elements and counts the
+      occurrences of each element using a Map.  </p>
+      
+      <p>2. Write a program that takes an array of
+      integers and a target sum. Check if there exists a subarray with the given
+      sum using a Set. </p>
+      
+      <p>3. Write a program that takes an array
+      of strings and groups anagrams together using a Map. </p>
+      
+      <p>4. Write a program that takes an array of strings and reverses each string in the
+      array using the array methods. </p>
+      
+      <p>5.Write a program that takes an array of numbers and filters out the perfect
+      square numbers using the array methods. </p>
+      
+      <p>6. Write a program that takes two objects and merges them into a single object </p>
+      
+      <p>7. Write a program that takes an array of objects
+      and converts it into a single object using Object.assign() and
+      Object.entries(). </p>
+      
+      <p>8. Write a program that takes a function with an array parameter and destructure the array
+      inside the function. </p>
+    
+      <p>9. Write a program that takes a nested object containing numeric values and calculates the sum of all values. Sample Input: const
+      nestedObj = { a: 1, b: 2, c: { d: 3, e: { f: 4 } }, }; </p>
+      
+      <p>10. Write a program that takes an object and counts the occurrences of
+      each property </p>
+    </p>
+
+    <script type="text/javascript">
+      // 1
+      
+      // 2
+
+      // 3
+
+      // 4
+      const arr1 = ["apple", "banana", "orange"];
+      const reversedArr = arr1.map((str) => str.split('').reverse().join(''));
+      console.log(reversedArr);
+
+
+      // 5
+      const arr2 = [1, 2, 4, 7, 9, 16, 25];
+      const perfectSquares = arr2.filter((num) => Math.sqrt(num) % 1 === 0);
+      console.log(perfectSquares);
+
+      // 6
+      const obj1 = { name: "John", age: 30 };
+      const obj2 = { city: "New York", occupation: "Engineer" };
+      const mergedObject = { ...obj1, ...obj2 };
+      console.log(mergedObject);
+
+      // 7
+      const arr3 = [
+      { key: "name", value: "John" },
+      { key: "age", value: 30 },
+      { key: "city", value: "New York" }
+      ];
+
+    const result = Object.assign({}, ...arr3.map((item) => ({ [item.key]: item.value })));
+    console.log(result);
+
+    // 8
+    function displayArray([first, second, ...rest]) {
+      console.log(`First Element: ${first}`);
+      console.log(`Second Element: ${second}`);
+      console.log(`Rest Elements: ${rest}`);
+    }
+
+    const arr4 = [1, 2, 3, 4, 5];
+    displayArray(arr4);
+
+    // 9
+
+    //10
+    function countProperties(obj) {
+    const propertyCount = {};
+
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        propertyCount[key] = (propertyCount[key] || 0) + 1;
+      }
+    }
+
+      return propertyCount;
+    }
+
+    const obj = { name: "John", age: 30, city: "New York", profession: "Engineer" };
+    const propertyCount = countProperties(obj);
+    console.log(propertyCount);
+    </script>
+  </body>
+</html>

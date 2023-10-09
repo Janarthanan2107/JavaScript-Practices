@@ -186,6 +186,28 @@
         "Substring Exist :",
         doesSubstringExist(largeString, substring)
       ); // Expected Output: true
+
+      function findMissingNumber(arr) {
+        let array = arr.sort().slice(1);
+        //after slice [1,3,4]
+        let missingNumber = null;
+
+        for (let i = 1; i <= array.length + 1; i++) {
+          // console.log(i);
+          // console.log(array);
+          // console.log(array.length + 1);
+          // console.log(i++);
+
+          if (!arr.includes(i)) {
+            missingNumber = i;
+          }
+        }
+
+        return missingNumber;
+      }
+
+      let number = [3, 4, -1, 1];
+      console.log(findMissingNumber(number))
     </script>
   </body>
 </html>
